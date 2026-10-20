@@ -1,11 +1,11 @@
 :root {
-  --fondo: #f4f4f5;
+  --fondo: linear-gradient(180deg, #1e40af 0%, #2563eb 45%, #3b82f6 100%);
   --tarjeta: #ffffff;
   --texto: #18181b;
   --tenue: #71717a;
   --linea: #d4d4d8;
-  --boton: #27272a;
-  --boton-activo: #3f3f46;
+  --boton: #2563eb;
+  --boton-activo: #1e40af;
   --acento: #2563eb;
   --acento-claro: #eff6ff;
   --sans: "Avenir Next", "Avenir", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -15,7 +15,9 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
   background: var(--fondo);
+  background-attachment: fixed;
   color: var(--texto);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
@@ -26,8 +28,8 @@ header {
   margin: 0 auto;
   padding: 28px 16px 0;
 }
-h1 { margin: 0; font-size: 30px; font-weight: 700; font-style: italic; color: var(--acento); }
-.lema { margin: 6px 0 0; font-size: 15px; color: var(--tenue); }
+h1 { margin: 0; font-size: 30px; font-weight: 700; font-style: italic; color: #ffffff; }
+.lema { margin: 6px 0 0; font-size: 15px; color: #dbeafe; }
 
 main {
   max-width: 1100px;
@@ -152,7 +154,7 @@ footer {
   margin: 0 auto;
   padding: 0 16px 30px;
 }
-footer p { font-size: 13px; color: var(--tenue); text-align: center; margin: 0; }
+footer p { font-size: 13px; color: #dbeafe; text-align: center; margin: 0; }
 
 @media (max-width: 820px) {
   main { grid-template-columns: minmax(0, 1fr); }
