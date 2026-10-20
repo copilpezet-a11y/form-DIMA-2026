@@ -3,15 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bitácora de Parcela equipo de Copil</title>
+  <title>Bitácora equipo Error 404</title>
 </head>
 <body>
   <header>
-    <h1>Bitácora de Parcela equipo de Copil</h1>
+    <h1>🌾 Bitácora equipo Error 404</h1>
+    <p class="lema">Registro de actividades de la parcela 📋</p>
   </header>
 
   <main>
+    <section class="resumen tarjeta" aria-label="Resumen">
+      <div class="dato">
+        <span class="icono">📊</span>
+        <strong id="total-registros">—</strong>
+        <small>registros</small>
+      </div>
+      <div class="dato">
+        <span class="icono">🆕</span>
+        <strong id="ultimo-registro">—</strong>
+        <small>último</small>
+      </div>
+      <div class="dato">
+        <span class="icono">📅</span>
+        <strong id="registros-semana">—</strong>
+        <small>esta semana</small>
+      </div>
+      <div class="dato">
+        <span class="icono">📈</span>
+        <strong id="parcela-comun">—</strong>
+        <small>parcela más activa</small>
+      </div>
+    </section>
+
     <form id="registro" class="tarjeta">
+      <h2 class="titulo-form">✨ Nuevo registro</h2>
       <div class="dos">
         <div class="campo">
           <label for="fecha">Fecha</label>
@@ -48,11 +73,15 @@
         <label for="observaciones">Observaciones</label>
         <textarea id="observaciones" name="observaciones" rows="8"></textarea>
       </div>
-      <button type="submit">Guardar registro</button>
+      <button type="submit">💾 Guardar registro</button>
       <p id="estado" class="estado" role="status"></p>
     </form>
 
     <section class="tarjeta tabla">
+      <div class="tabla-encabezado">
+        <h2 class="titulo-tabla">🗂️ Registros guardados</h2>
+        <span id="conteo" class="contador"></span>
+      </div>
       <table id="registros">
         <thead>
           <tr><th>Fecha</th><th>Parcela</th><th>Cultivo</th><th>Actividad</th><th>Observaciones</th></tr>
@@ -61,6 +90,10 @@
       </table>
     </section>
   </main>
+
+  <footer>
+    <p>™️ Equipo Error 404 · Curso DIMA 2026 · Departamento de Ingeniería Mecánica Agrícola · UACh</p>
+  </footer>
 
   <script type="module" src="/src/main.js"></script>
 </body>

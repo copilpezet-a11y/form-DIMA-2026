@@ -6,6 +6,8 @@
   --linea: #d4d4d8;
   --boton: #27272a;
   --boton-activo: #3f3f46;
+  --acento: #2563eb;
+  --acento-claro: #eff6ff;
   --sans: "Avenir Next", "Avenir", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -24,11 +26,12 @@ header {
   margin: 0 auto;
   padding: 28px 16px 0;
 }
-h1 { margin: 0; font-size: 26px; font-weight: 600; font-style: italic; color: #2563eb; }
+h1 { margin: 0; font-size: 30px; font-weight: 700; font-style: italic; color: var(--acento); }
+.lema { margin: 6px 0 0; font-size: 15px; color: var(--tenue); }
 
 main {
   max-width: 1100px;
-  margin: 20px auto 40px;
+  margin: 20px auto 20px;
   padding: 0 16px;
   display: grid;
   grid-template-columns: 380px minmax(0, 1fr);
@@ -43,8 +46,28 @@ main {
   padding: 22px;
 }
 
+/* Resumen */
+.resumen {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  padding: 18px 22px;
+}
+.dato { display: flex; flex-direction: column; gap: 4px; }
+.dato .icono { font-size: 22px; }
+.dato strong { font-size: 24px; line-height: 1.1; color: var(--acento); }
+.dato small {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--tenue);
+}
+
 /* Formulario */
 #registro { display: flex; flex-direction: column; gap: 14px; }
+.titulo-form { margin: 0; font-size: 18px; font-weight: 700; }
 .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .campo { display: flex; flex-direction: column; gap: 6px; }
 .campo label, th {
@@ -65,7 +88,7 @@ input, select, textarea {
   color: var(--texto);
 }
 textarea { resize: vertical; line-height: 1.45; }
-input:focus, select:focus, textarea:focus { outline: 2px solid var(--tenue); outline-offset: -1px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--acento); outline-offset: -1px; }
 
 button {
   font: inherit;
@@ -80,18 +103,58 @@ button {
 button:hover { background: var(--boton-activo); }
 button:disabled { opacity: .5; cursor: default; }
 
-.estado { margin: 0; font-size: 14px; color: var(--tenue); }
+.estado { margin: 0; font-size: 14px; font-weight: 600; color: var(--tenue); }
 .estado:empty { display: none; }
 
 /* Registros */
-.tabla { padding: 6px 12px; overflow-x: auto; }
+.tabla { padding: 6px 12px 12px; overflow-x: auto; }
+.tabla-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 6px 4px;
+}
+.titulo-tabla { margin: 0; font-size: 17px; font-weight: 700; }
+.contador {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--acento);
+  background: var(--acento-claro);
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
 table { width: 100%; border-collapse: collapse; font-size: 15px; }
 th, td { padding: 12px; border-bottom: 1px solid var(--linea); text-align: left; vertical-align: top; }
 tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: #fafafa; }
 td:not(:last-child) { white-space: nowrap; }
 td:last-child { min-width: 220px; }
 td[colspan] { color: var(--tenue); text-align: center; padding: 28px 12px; }
 
+/* Registro más reciente */
+tr.reciente td { background: var(--acento-claro); }
+tr.reciente:hover td { background: var(--acento-claro); }
+.insignia {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: #fff;
+  background: var(--acento);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
+
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 30px;
+}
+footer p { font-size: 13px; color: var(--tenue); text-align: center; margin: 0; }
+
 @media (max-width: 820px) {
   main { grid-template-columns: minmax(0, 1fr); }
+  .resumen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
